@@ -1,0 +1,60 @@
+.tags-list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: hidden;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &--left-aligned {
+    justify-content: flex-start;
+  }
+
+  &--full-width {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.tags-list__item {
+  flex: 0 0 auto; // Фиксированный размер для избежания переполнения
+  white-space: nowrap; // Чтобы теги не переносились
+  min-width: fit-content !important;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black !important;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+
+  &:hover,
+  &:focus {
+    background: radial-gradient(circle, rgb(244, 238, 244) 0%, rgba(148, 187, 233, 1) 100%);
+    transform: scale(0.95); // уменьшение размера кнопки
+  }
+
+  &:active {
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    transform: scale(0.9); // уменьшение размера кнопки
+  }
+}
+
+.tags-list__item--with-icon {
+  display: flex;
+  align-items: center;
+  color: purple !important;
+}
+
+.tags-list__separator {
+  font-size: 12px;
+  color: #ccc;
+  height: 24px;
+  margin: 0 10px;
+  flex-shrink: 0;
+}
